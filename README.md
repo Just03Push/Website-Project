@@ -22,7 +22,7 @@ Bu proje, Özdoğan Unlu Mamulleri için hazırlanmış bir web sitesidir. Kulla
 1. Bu repoyu klonlayın:
 
    ```bash
-   git clone https://github.com/Just03Push/website-Project.git
+   git clone https://github.com/Just03Push/Website-Project.git
    ```
 
 2. Gerekli paketleri yükleyin:
