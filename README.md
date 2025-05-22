@@ -1,6 +1,6 @@
-# Özdoğan Unlu Mamulleri - İletişim Formu Projesi
+# Özdoğan Unlu Mamulleri - Web Sitesi Projesi
 
-Bu proje, Özdoğan Unlu Mamulleri için oluşturulmuş basit bir iletişim formudur. Kullanıcıların form aracılığıyla ad, e-posta ve mesajlarını iletmesi sağlanır. Gönderilen mesajlar, MySQL veritabanına kaydedilir.
+Bu proje, Özdoğan Unlu Mamulleri için hazırlanmış bir web sitesidir. Kullanıcı dostu bir arayüzle firmanın tanıtımı yapılır ve ziyaretçilerin iletişim kurabilmesi sağlanır. İletişim formu aracılığıyla gönderilen mesajlar MySQL veritabanına kaydedilir.
 
 ## Özellikler
 
