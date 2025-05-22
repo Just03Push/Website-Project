@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>İletişim - Özdoğan Unlu Mamulleri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Özdoğan Unlu Mamulleri</h1>
+        <div class="nav-right">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="urunler.html">Ürünlerimiz</a>
+            <a href="iletisim.html" class="active">İletişim</a>
+            <a href="subeler.html">Şubelerimiz</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="iletisim-form">
+            <h2>Bizimle İletişime Geçin</h2>
+            <form id="contactForm">
+                <label for="ad">Ad Soyad</label>
+                <input type="text" id="ad" name="name" placeholder="Adınızı giriniz" required>
+
+                <label for="email">E-posta</label>
+                <input type="email" id="email" name="email" placeholder="E-posta adresiniz" required>
+
+                <label for="mesaj">Mesajınız</label>
+                <textarea id="mesaj" name="message" placeholder="Mesajınızı yazınız..." required></textarea>
+
+                <button type="submit">Gönder</button>
+            </form>
+        </div>
+
+        <div class="iletisim-gorsel">
+            <img src="images/harita_Konumu.jpg" alt="Harita Görseli">
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();  // Sayfanın yeniden yüklenmesini engelliyoruz
+            const formData = new FormData(form);  // Form verilerini alıyoruz
+            const data = Object.fromEntries(formData.entries());  // Form verilerini JSON formatına çeviriyoruz
+
+            try {
+                const response = await fetch('http://localhost:3001/api/contact', {  // Backend API'ye POST isteği gönderiyoruz
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {  // Eğer yanıt başarılıysa
+                    alert("Mesaj başarıyla gönderildi!");
+                    form.reset();  // Formu sıfırlıyoruz
+                } else {
+                    alert("Bir hata oluştu, tekrar deneyin.");
+                }
+            } catch (error) {
+                console.error('Fetch error:', error);
+                alert("Bir hata oluştu, tekrar deneyin.");
+            }
+        });
+    </script>
+    
+</body>
+
+</html>
